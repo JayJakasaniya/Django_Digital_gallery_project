@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 
+****************************************************/
+/* navbar */
+/* *************************************************/
+
+.nav-link ,.navbar-brand{
+    color:black;
+    font-family:'Poppins', sans-serif;
+}
+
+/* 
+****************************************************/
+/* footer */
+/* *************************************************/
+.footer{
+    background-color: black;
+    color: white;
+    height: auto;
+    padding-top: 50px;
+    font-family: 'Poppins', sans-serif;
+    padding: 30px;
+}
+.footer-box{
+  justify-content: space-around;
+}
+
+.logo-name{
+    font-size: 25px;
+}
+.logo-pera{
+    font-size: 14px;
+    color: #6C6C6C;
+}
+.page-links{
+    margin-bottom: 10px;
+}
+.page-title{
+    font-size: 25px;
+}
+.link-box{
+    display: flex;
+    flex-flow: column;
+}
+.footer-page-link{
+    text-decoration: none;
+    color: #6C6C6C;
+}
+.email-title{
+    font-size: 25px;
+}
+.email-input{
+margin: 10px 0px;
+font-size: 15px;
+
+}
+.social-media-title{
+    font-size: 25px;
+}
+
+/* 
+****************************************************/
+/* index */
+/* *************************************************/
+.hero{
+    background-image:url('../Images/hero-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.hero-box{
+    padding-top: 60px;
+    padding-left: 40px;
+
+
+}
+.hero-title{
+    font-size: 3.5em;
+    font-family: 'Fredericka the Great', cursive;
+}
+.hero-btn{
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+
+.about-box{
+    padding-top: 30px;
+}
+.s2-title{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 3em;
+text-align: center;
+margin: 20px;
+}
+.s2-body{
+    font-family:'Poppins', sans-serif;
+    padding-left: 10px;
+    margin-bottom: 50px;
+}
+.s2-pera1{
+    padding-top: 30px;
+}
+
+
+/****************************************************/
+/* gallery */
+/* *************************************************/
+.gallery-title{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 3em;
+  
+}
+.gallery-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 50px 0px;
+}
+.image{
+    position: relative;
+    width: 350px;
+    font-family:'Poppins', sans-serif;
+}
+.drawing-img{
+    display: block;
+    width: 100%;
+
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content:flex-end;
+    opacity: 0;
+    transition: 0.5s;
+}
+.overlay:hover{
+    opacity: 1;
+}
+.img-title{
+    font-size: 2em;
+    padding-left: 10px;
+}
+.img-pera{
+    font-size: 0.8em;
+    color:#cecece;
+    padding-left: 10px;
+}
+
+
+/****************************************************/
+/* contact */
+/* *************************************************/
+.contact-page{
+
+    font-family:'Poppins', sans-serif;
+}
+.text-black {
+    color: #000; }
+  
+.content {
+    padding: 7rem 0; }
+  
+.heading {
+    font-size: 2.5rem;
+    font-weight: 900; }
+  
+.form-control {
+    border: none;
+    background: #f3f3f3; }
+.form-control:active, .form-control:focus {
+      outline: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border-color: #000;
+      background: #f3f3f3; }
+  
+.col-form-label {
+    color: #000; }
+  
+.btn, .form-control, .custom-select {
+    height: 50px; }
+  
+.custom-select:active, .custom-select:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #000; }
+  
+.btn {
+    border: none;
+    border-radius: 4px !important; }
+.btn.btn-primary {
+      background: #000;
+      color: #fff;
+      padding: 15px 20px; }
+.btn:hover {
+      color: #fff; }
+.btn:active, .btn:focus {
+      outline: none;
+      -webkit-box-shadow: none;
+      box-shadow: none; }
+  
+.box {
+    padding: 40px;
+    background: #fff;
+    -webkit-box-shadow: -30px 30px 0px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: -30px 30px 0px 0 rgba(0, 0, 0, 0.08); }
+.box h3 {
+      font-size: 14px;
+      margin-bottom: 30px;
+      text-align: center; }
+  
+.label.error {
+    font-size: 12px;
+    color: red; }
+  
+#message {
+    resize: vertical; }
+  
+#form-message-warning, #form-message-success {
+    display: none; }
+  
+#form-message-warning {
+    color: #B90B0B; }
+  
+#form-message-success {
+    color: #55A44E;
+    font-size: 18px;
+    font-weight: bold; }
+  
+.submitting {
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+    display: none;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000; }
+/****************************************************/
+/* login */
+/* *************************************************/
+
+.login_form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-flow: column;
+    font-family:'Poppins', sans-serif;
+    padding: 50px 30px;
+    }
+    .login_data{
+    padding: 50px 30px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+    }
+    .login-title{
+    margin: 15px 0px;
+    }
+    .login-input{
+    display: flex;
+    flex-flow: column;
+    
+    }
+    .login-input input{
+    margin: 10px 0px;
+    width: 300px;
+    }
+
+    /* 
+****************************************************/
+/* image upload */
+/* *************************************************/
+.imageupload-mainbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    font-family:'Poppins', sans-serif;
+}
+.imageupload-subbox{
+    display: flex;
+    flex-flow: column;
+    margin-top: 30px;
+    padding-top: 20px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+    font-family:'Poppins', sans-serif;
+}
+.imageupload-subbox h1{
+font-size: 1.5em;
+text-align: center;
+font-family:'Poppins', sans-serif;
+}
+.upload-form{
+    margin: 30px;
+    font-family:'Poppins', sans-serif;
+    
+}
+.upload-form input{
+    display: block;
+
+}
+
+    /* 
+****************************************************/
+/* Message */
+/* *************************************************/
+
+.message-page{
+    font-family:'Poppins', sans-serif;
+}
+.msg-content{
+   display: flex;
+   flex-flow: column;
+}

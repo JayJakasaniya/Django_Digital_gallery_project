@@ -1,0 +1,25 @@
+{% extends 'components/base.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="login_form">
+
+
+    <div class="login_data">
+        <h1 class="text-center login-title">ADMIN LOGIN</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="login-input">
+                <input name="username" id="username" type="text" placeholder="Username" required="required">
+                <input name="password" id="password" type="password" placeholder="Password" required="required">
+            </div>
+            <p class="error_msg"></p>
+            <button type="submit" class="btn btn-dark w-100">Log in</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

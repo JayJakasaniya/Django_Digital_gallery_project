@@ -1,0 +1,138 @@
+{% extends 'components/base.html' %}
+{% block title %}
+Contact Us
+{% endblock %}
+{% block content %}
+<section class="contact-page">
+    <div class="content">
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+
+
+                    <div class="row justify-content-center d-flex align-items-center ">
+                        <div class="col-md-6">
+
+                            <h3 class="heading mb-4">Let's talk about Drawing!</h3>
+                            <p>Feel free to send messages and your feedback and its free of coast.
+                                i am waiting....
+                            </p>
+
+                            <!-- <p><img src="" alt="Image" class="img-fluid"></p> -->
+
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                                {% csrf_token %}
+                                <div class="row my-3">
+                                    <div class="col-md-12 form-group">
+                                        <input type="text" class="form-control" name="name" id="name"
+                                            placeholder="Your name" required="required">
+                                    </div>
+                                </div>
+                                <div class="row my-3">
+                                    <div class="col-md-12 form-group">
+                                        <input type="email" class="form-control" name="email" id="email"
+                                            placeholder="Email" required="required">
+                                    </div>
+                                </div>
+                                <div class="row my-3">
+                                    <div class="col-md-12 form-group">
+                                        <textarea class="form-control h-100" name="message" id="message"
+                                            placeholder="Write your message" required="required"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row my-3">
+                                    <div class="col-12">
+                                        <input type="submit" value="Send Message"
+                                            class="btn btn-primary rounded-0 py-2 px-4">
+                                        <span class="submitting"></span>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div id="form-message-warning mt-4"></div>
+                            <div id="form-message-success">
+                                Your message was sent, thank you!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $(function () {
+
+            // Form
+
+            var contactForm = function () {
+
+                if ($('#contactForm').length > 0) {
+                    $("#contactForm").validate({
+                        rules: {
+                            name: "required",
+                            email: {
+                                required: true,
+                                email: true
+                            },
+                            message: {
+                                required: true,
+                                minlength: 5
+                            }
+                        },
+                        messages: {
+                            name: "Please enter your name",
+                            email: "Please enter a valid email address",
+                            message: "Please enter a message"
+                        },
+                        /* submit via ajax */
+                        submitHandler: function (form) {
+                            var $submit = $('.submitting'),
+                                waitText = 'Submitting...';
+
+                            $.ajax({
+                                type: "POST",
+                                url: "php/send-email.php",
+                                data: $(form).serialize(),
+
+                                beforeSend: function () {
+                                    $submit.css('display', 'block').text(waitText);
+                                },
+                                success: function (msg) {
+                                    if (msg == 'OK') {
+                                        $('#form-message-warning').hide();
+                                        setTimeout(function () {
+                                            $('#contactForm').fadeOut();
+                                        }, 1000);
+                                        setTimeout(function () {
+                                            $('#form-message-success').fadeIn();
+                                        }, 1400);
+
+                                    } else {
+                                        $('#form-message-warning').html(msg);
+                                        $('#form-message-warning').fadeIn();
+                                        $submit.css('display', 'none');
+                                    }
+                                },
+                                error: function () {
+                                    $('#form-message-warning').html("Something went wrong. Please try again.");
+                                    $('#form-message-warning').fadeIn();
+                                    $submit.css('display', 'none');
+                                }
+                            });
+                        }
+
+                    });
+                }
+            };
+            contactForm();
+
+        });
+    </script>
+</section>
+{% endblock %}

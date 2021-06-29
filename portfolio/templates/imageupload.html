@@ -1,0 +1,29 @@
+{% extends 'components/dashboard.html' %}
+{% block title %}
+Image Upload
+{% endblock %}
+
+{% block content %}
+
+<div class="container imageupload-mainbox">
+
+
+    <div class="imageupload-subbox">
+        <h1>Upload images here</h1>
+        <form method="post" class="upload-form" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <label for="Title">Title: </label>
+            <input type="text" name="Title" id="Title" class="Title-input"><br>
+            <label for="Decriptions">Decription: </label>
+            <input type="text" name="Decriptions" id="Decriptions" class="Decriptions-input"><br>
+            <label for="DrawingImage">Upload Image:</label>
+            <input type="file" name="DrawingImage" id="DrawingImage" multiple>
+            <button class="btn btn-dark mt-4 w-100" type="submit" required="required">Upload images</button>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}
